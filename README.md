@@ -262,11 +262,6 @@ docker-compose ps
 docker-compose logs -f
 ```
 
-### 進入容器（如 bash）：
-```bash
-docker-compose exec web bash
-```
-
 ---
 
 ## 📁 範例 docker-compose.yml
