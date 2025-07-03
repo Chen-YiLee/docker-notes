@@ -113,3 +113,84 @@ docker image prune
 ```bash
 docker container prune
 ```
+
+
+# 🐳 Docker Compose 指令教學筆記（繁體中文）
+
+Docker Compose 是用來 **定義與管理多個容器服務** 的工具，透過一個 `docker-compose.yml` 檔案即可統一控制整個應用環境。
+
+---
+
+## 📦 常用指令總覽
+
+| 指令                                      | 說明                                          |
+|-------------------------------------------|-----------------------------------------------|
+| `docker-compose up`                       | 啟動所有服務，根據 yml 建立容器              |
+| `docker-compose up -d`                    | 背景模式執行容器                              |
+| `docker-compose down`                     | 停止並移除容器、網路等                        |
+| `docker-compose build`                    | 建構映像檔                                    |
+| `docker-compose stop`                     | 停止容器但不移除                              |
+| `docker-compose start`                    | 啟動已停止的容器                              |
+| `docker-compose restart`                  | 重新啟動容器                                  |
+| `docker-compose ps`                       | 顯示服務狀態                                  |
+| `docker-compose logs`                     | 查看日誌                                      |
+| `docker-compose logs -f`                  | 即時追蹤日誌                                  |
+| `docker-compose exec <服務名稱> <指令>`   | 在容器中執行指令                              |
+| `docker-compose config`                   | 驗證設定檔格式                                |
+| `docker-compose pull`                     | 下載映像檔                                     |
+| `docker-compose rm`                       | 刪除已停止的服務容器                          |
+
+---
+
+## 🚀 常用操作範例
+
+### 啟動服務（背景模式）：
+```bash
+$ docker-compose up -d
+```
+
+### 查看執行中的容器：
+```bash
+$ docker-compose ps
+```
+
+### 查看並追蹤日誌：
+```bash
+$ docker-compose logs -f
+```
+
+### 進入容器（如 bash）：
+```bash
+$ docker-compose exec web bash
+```
+
+---
+
+## 📁 範例 docker-compose.yml
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+
+  redis:
+    image: redis:alpine
+```
+
+---
+
+## 📌 小提示
+
+- `docker-compose.yml` 必須與指令執行目錄在同一層
+- 支援 `.env` 環境變數設定
+- 適用於開發、測試、CI/CD、自動化部署等場景
+
+---
+
+> ✍️ 文件整理：你自己  
+> 📄 用途：Docker Compose 學習筆記、快速查詢
+
