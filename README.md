@@ -160,10 +160,10 @@ CMD ["bash"]
 在有 `Dockerfile` 的目錄中執行：
 
 ```bash
-docker build -t my-ubuntu-image .
+docker build -t <image_name> .
 ```
 
-- `-t my-ubuntu-image`：建立的映像檔名稱
+- `-t <image_name>`：建立的映像檔名稱
 - `.`：表示使用目前目錄的 Dockerfile
 
 ---
@@ -171,12 +171,12 @@ docker build -t my-ubuntu-image .
 ## 🚀 3. 執行容器
 
 ```bash
-docker run -it --name my-ubuntu-container my-ubuntu-image
+docker run -it --name <container_name> <image_name>
 ```
 
 - `-it`：互動模式與終端
 - `--name`：指定容器名稱
-- `my-ubuntu-image`：剛剛建立的映像名稱
+- `<image_name>`：剛剛建立的映像名稱
 
 進入容器後會看到熟悉的 Ubuntu shell。
 
@@ -188,12 +188,12 @@ docker run -it --name my-ubuntu-container my-ubuntu-image
 
 ### 方法一：啟動並附加終端
 ```bash
-docker start -ai my-ubuntu-container
+docker start -ai <container_name>
 ```
 
 ### 方法二：容器已在背景執行
 ```bash
-docker exec -it my-ubuntu-container bash
+docker exec -it <container_name> bash
 ```
 
 ---
@@ -201,9 +201,9 @@ docker exec -it my-ubuntu-container bash
 ## 🧹 5. 清除容器與映像檔（可選）
 
 ```bash
-docker stop my-ubuntu-container
-docker rm my-ubuntu-container
-docker rmi my-ubuntu-image
+docker stop <container_name>
+docker rm <container_name>
+docker rmi <image_name>
 ```
 
 ---
