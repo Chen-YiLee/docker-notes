@@ -115,12 +115,15 @@ docker container prune
 ```
 
 
-# 🐳 Docker Compose 指令教學筆記
+# Docker Compose 指令教學筆記
 
 Docker Compose 是用來 **定義與管理多個容器服務** 的工具，透過一個 `docker-compose.yml` 檔案即可統一控制整個應用環境。
 
 ---
-
+### 安裝docker-compose 工具：
+```bash
+sudo apt install docker-compose 
+```
 ## 📦 常用指令總覽
 
 | 指令                                      | 說明                                          |
