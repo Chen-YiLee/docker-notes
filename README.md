@@ -57,14 +57,6 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 ---
-## 🛠️ 驗證安裝
-檢查 Docker 與系統架構：
-```bash
-docker version
-uname -m
-```
-確認輸出中包含 `aarch64` 或 `arm64` 字樣。
----
 ## 📌 備註
 - 安裝過程會自動選擇適合 ARM 的套件，無需手動指定架構。
 - 如需部署特定服務，可搜尋是否支援 ARM 的 Docker 映像（例如 `arm64v8/nginx`）。
