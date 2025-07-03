@@ -1,5 +1,77 @@
 # Docker 基本指令與操作筆記
+## 安裝 Docker 在 Ubuntu 22.04 (ARM 架構)
+---
+## ✅ 系統需求
+- 作業系統：Ubuntu 22.04 (ARM64 / aarch64)
+- 權限：具有 `sudo` 權限的使用者
+- 網路：可以存取 `https://download.docker.com`
+---
 
+## 🧰 安裝步驟
+### 1. 更新套件並安裝必要工具
+```bash
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg lsb-release
+```
+---
+### 2. 新增 Docker GPG 金鑰
+```bash
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+---
+### 3. 新增 Docker APT 套件來源
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+---
+### 4. 安裝 Docker Engine 與相關工具
+```bash
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+---
+### 5. 啟用並啟動 Docker 服務
+```bash
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+---
+### 6. 測試 Docker 是否安裝成功
+```bash
+sudo docker run hello-world
+```
+應該會看到 Docker 成功運作的歡迎訊息。
+---
+### 7. （可選）讓使用者不需 sudo 執行 Docker
+```bash
+sudo usermod -aG docker $USER
+```
+執行後請 **重新登入或重啟機器**，或輸入以下指令立即生效：
+```bash
+newgrp docker
+```
+---
+## 🛠️ 驗證安裝
+檢查 Docker 與系統架構：
+```bash
+docker version
+uname -m
+```
+確認輸出中包含 `aarch64` 或 `arm64` 字樣。
+---
+## 📌 備註
+- 安裝過程會自動選擇適合 ARM 的套件，無需手動指定架構。
+- 如需部署特定服務，可搜尋是否支援 ARM 的 Docker 映像（例如 `arm64v8/nginx`）。
+---
+## 🔗 參考資料
+- [Docker 官方文件](https://docs.docker.com/engine/install/ubuntu/)
+- [ARM 架構映像庫](https://hub.docker.com/search?q=&type=image&architecture=arm64)
+  
 ## 🐳 安裝與基本資訊
 查看已安裝的 Docker 版本
 ```bash
