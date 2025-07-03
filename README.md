@@ -4,6 +4,6 @@
 查看已安裝的 Docker 版本
 ```bash
 docker --version
-顯示系統整體的 Docker 資訊
-```bash
+```
+
 docker info
