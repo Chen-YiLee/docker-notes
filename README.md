@@ -45,7 +45,8 @@ sudo systemctl start docker
 ```bash
 sudo docker run hello-world
 ```
-應該會看到 Docker 成功運作的歡迎訊息。
+ 應該會看到 Docker 成功運作的歡迎訊息
+
 ---
 ### 7. （可選）讓使用者不需 sudo 執行 Docker
 ```bash
