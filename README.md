@@ -146,22 +146,22 @@ Docker Compose 是用來 **定義與管理多個容器服務** 的工具，透�
 
 ### 啟動服務（背景模式）：
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 ### 查看執行中的容器：
 ```bash
-$ docker-compose ps
+docker-compose ps
 ```
 
 ### 查看並追蹤日誌：
 ```bash
-$ docker-compose logs -f
+docker-compose logs -f
 ```
 
 ### 進入容器（如 bash）：
 ```bash
-$ docker-compose exec web bash
+docker-compose exec web bash
 ```
 
 ---
@@ -191,6 +191,6 @@ services:
 
 ---
 
-> ✍️ 文件整理：你自己  
+> ✍️ 文件整理：Chen-Yi Lee 
 > 📄 用途：Docker Compose 學習筆記、快速查詢
 
