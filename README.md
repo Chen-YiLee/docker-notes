@@ -11,12 +11,16 @@
 ### 1. 更新套件並安裝必要工具
 ```bash
 sudo apt update
+```
+```bash
 sudo apt install -y ca-certificates curl gnupg lsb-release
 ```
 ---
 ### 2. 新增 Docker GPG 金鑰
 ```bash
 sudo mkdir -p /etc/apt/keyrings
+```
+```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
   sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
@@ -32,12 +36,16 @@ echo \
 ### 4. 安裝 Docker Engine 與相關工具
 ```bash
 sudo apt update
+```
+```bash
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 ---
 ### 5. 啟用並啟動 Docker 服務
 ```bash
 sudo systemctl enable docker
+```
+```bash
 sudo systemctl start docker
 ```
 ---
