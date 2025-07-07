@@ -279,16 +279,25 @@ docker-compose logs -f
 ## 📁 範例 docker-compose.yml
 
 ```yaml
-version: '3.8'
+version: "3.9"
 
 services:
-  web:
-    image: nginx:alpine
+  app1:
+    build: ./app1
+    container_name: app1
     ports:
-      - "8080:80"
+      - "5000:5000"
+    depends_on:
+      - app2
+    restart: unless-stopped
 
-  redis:
-    image: redis:alpine
+  app2:
+    build: ./app2
+    container_name: app2
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+    
 ```
 
 ---
