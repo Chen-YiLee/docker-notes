@@ -145,13 +145,24 @@ newgrp docker
 在你的工作目錄中建立一個名為 `Dockerfile` 的檔案，內容如下：
 
 ```Dockerfile
+# 使用 Ubuntu 22.04 作為基礎映像檔
 FROM ubuntu:22.04
 
-# 安裝基本工具
-RUN apt update && apt install -y curl vim
+# 避免互動式安裝卡住
+ENV DEBIAN_FRONTEND=noninteractive
 
-# 預設進入 bash 終端
-CMD ["bash"]
+# 安裝 Python3 和 pip
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    apt-get clean
+
+# 設定預設工作目錄
+WORKDIR /app
+# 複製所有本地檔案進入 container 的 /app
+COPY . /app
+
+# 使用 sleep infinity 讓 container 持續運作
+CMD ["sleep", "infinity"]
 ```
 
 ---
