@@ -56,7 +56,7 @@ sudo docker run hello-world
  應該會看到 Docker 成功運作的歡迎訊息
 
 ---
-### 7. （可選）讓使用者不需 sudo 執行 Docker
+### 7. 讓使用者不需 sudo 執行 Docker (可不執行)
 ```bash
 sudo usermod -aG docker $USER
 ```
@@ -210,7 +210,7 @@ docker exec -it <container_name> bash
 
 ---
 
-## 🧹 5. 清除容器與映像檔（可選）
+## 🧹 5. 清除容器與映像檔
 
 ```bash
 docker stop <container_name>
