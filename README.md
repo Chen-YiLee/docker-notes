@@ -192,6 +192,11 @@ docker run -d --name <container_name> <image_name>
 
 進入容器後會看到熟悉的 Ubuntu shell。
 
+### 用volume執行容器
+```bash
+docker run -d -v <volume>:<container_path> --name <container_name> <image_name>
+```
+
 ---
 
 ## 🔁 4. 再次進入已建立的容器
