@@ -201,14 +201,8 @@ docker run -d -v <volume>:<container_path> --name <container_name> <image_name>
 
 ## 🔁 4. 再次進入已建立的容器
 
-若你已離開容器，可以使用以下方式重新進入：
+若你已離開容器，可以使用以下方式重新進入(要確保容器還在執行)：
 
-### 方法一：啟動並附加終端
-```bash
-docker start -ai <container_name>
-```
-
-### 方法二：容器已在背景執行
 ```bash
 docker exec -it <container_name> bash
 ```
