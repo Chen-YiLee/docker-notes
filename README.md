@@ -86,7 +86,7 @@ newgrp docker
 | 指令                                 | 說明                       |
 |:-------------------------------------|:---------------------------|
 | docker pull <image_name>             | 下載映像檔                 |
-| docker build -t <image_name>:<tag> . | 使用 Dockerfile 建立映像檔 |
+| docker build -t <image_name>:<image_tag> . | 使用 Dockerfile 建立映像檔 |
 | docker images                        | 列出本地所有映像檔         |
 | docker rmi <image_name>              | 刪除映像檔                 |
 
