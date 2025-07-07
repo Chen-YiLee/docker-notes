@@ -183,7 +183,7 @@ docker build -t <image_name> .
 ## 🚀 3. 執行容器
 
 ```bash
-docker run -it --name <container_name> <image_name>
+docker run -d --name <container_name> <image_name>
 ```
 
 - `-it`：互動模式與終端
