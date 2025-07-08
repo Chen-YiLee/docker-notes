@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/329ac5ba-929d-4179-b7a2-6055e0b923f0)# 桌面套件安裝
+# 桌面套件安裝
 ## 安裝XFCE桌面工具
 XFCE是較輕量化的桌面工具，RAM和CPU的占用量較少。
 對於老舊電腦、虛擬機或需要節省資源的伺服器特別合適。
