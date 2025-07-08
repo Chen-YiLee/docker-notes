@@ -1,3 +1,29 @@
+![image](https://github.com/user-attachments/assets/329ac5ba-929d-4179-b7a2-6055e0b923f0)# 桌面套件安裝
+## 安裝XFCE桌面工具
+XFCE是較輕量化的桌面工具，RAM和CPU的占用量較少。
+對於老舊電腦、虛擬機或需要節省資源的伺服器特別合適。
+
+安裝步驟
+### 1. 更新套件
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+### 2. 安裝 XFCE 桌面環境 
+```bash
+sudo apt install xfce4 lightdm -y
+```
+### 3.安裝登錄管理器（建議用 lightdm）
+安裝過程中會跳出畫面問你選擇預設的登入管理器，請選「lightdm」
+如果沒有跳出來則輸入：
+```bash
+sudo apt install lightdm -y
+```
+4. 安裝完成後，重新啟動
+```bash
+sudo reboot
+```
+
+
 # Docker 基本指令與操作筆記
 ## 安裝 Docker 在 Ubuntu 22.04 (ARM 架構)
 ---
