@@ -18,7 +18,7 @@ sudo apt install xfce4 lightdm -y
 ```bash
 sudo apt install lightdm -y
 ```
-4. 安裝完成後，重新啟動
+4. 安裝完成後，重新啟動 (先不要做這行)
 ```bash
 sudo reboot
 ```
